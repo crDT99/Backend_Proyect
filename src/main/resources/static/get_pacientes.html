@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Pacientes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script type="text/javascript" src="/js/get_pacientes.js"></script>
+    <script type="text/javascript" src="/js/update_paciente.js"></script>
+    <script type="text/javascript" src="/js/delete_paciente.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pacientes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./post_pacientes.html">Guardar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Odontologos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./post_odontologos.html">Guardar</a></li>
+                            <li><a class="dropdown-item" href="./get_odontologos.html">Listar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Turnos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./post_turnos.html">Guardar</a></li>
+                            <li><a class="dropdown-item" href="./get_turnos.html">Listar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="container">
+    <div id="div_paciente_table">
+        <h1>Listado de Pacientes</h1>
+        <div class="row col-md-20 table-responsive">
+            <table id="pacienteTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cedula</th>
+                    <th>Fecha</th>
+                    <th>Calle</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody id="pacienteTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6" style="display: none;
+											background-color:#e6fffa; padding:10px; border-radius:3px"
+             id="div_paciente_updating">
+            <form id="update_paciente_form">
+                <div class="form-group">
+                    <label >Id:</label>
+                    <input type="text" class="form-control" id="paciente_id" readonly>
+                </div>
+                <div class="form-group">
+                    <label >Nombre:</label>
+                    <input type="text" class="form-control" id="nombre"
+                           placeholder="Ingrese el nombre:"></input>
+                </div>
+                <div class="form-group">
+                    <label >Apellido:</label>
+                    <input type="text" class="form-control" id="apellido"
+                           placeholder="Ingrese el apellido:" ></input>
+                </div>
+                <div class="form-group">
+                    <label >Cedula:</label>
+                    <input type="text" class="form-control" id="cedula"
+                           placeholder="Ingrese la cedula:" ></input>
+                </div>
+                <div class="form-group">
+                    <label >Fecha de Ingreso:</label>
+                    <input type="Date" class="form-control" id="fechaIngreso"></input>
+                </div>
+                <div class="form-group">
+                    <label >Calle:</label>
+                    <input type="text" class="form-control" id="calle"
+                           placeholder="Ingrese la calle:" ></input>
+                </div>
+                <div class="form-group">
+                    <label >Numeracion:</label>
+                    <input type="text" class="form-control" id="numero"
+                           placeholder="Ingrese la numeracion:" ></input>
+                </div>
+                <div class="form-group">
+                    <label >Localidad:</label>
+                    <input type="text" class="form-control" id="localidad"
+                           placeholder="Ingrese la Localidad:" ></input>
+                </div>
+                <div class="form-group">
+                    <label >Provincia:</label>
+                    <input type="text" class="form-control" id="provincia"
+                           placeholder="Ingrese la Provincia:" ></input>
+                </div>
+                <div class="form-group">
+                    <label >Email:</label>
+                    <input type="text" class="form-control" id="email"
+                           placeholder="Ingrese el correo electronico:" ></input>
+                </div>
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+            <div id="response" style="display:none; margin:10px">
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+</body>
+</html>
